@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import { PetSchema } from "../schemas/pet-schema.js";
 import { deleteRegister, fetchPets, insertPet, updateRegister } from "../repositories/pets-repositories.js";
+import { Pet } from "../protocols/pet-protocol.js";
 
 async function postPet(req: Request, res: Response) {
-  const petInfo = req.body;
+  const petInfo = req.body as Pet;
 
   const { error } = PetSchema.validate(petInfo);
 
@@ -40,7 +41,7 @@ async function getAvailablePets(req: Request, res: Response) {
   }
 }
 
-async function updatePet(req: Request, res: Response): Promise<Response> {
+async function updatePet(req: Request, res: Response) {
   const id: string = req.params.id;
   const petInfo: boolean = req.body.isAvailable;
 
