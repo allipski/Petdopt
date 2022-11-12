@@ -16,8 +16,4 @@ type PetInfoRetrieve = {
     createdAt: string | Date
 }
 
-type PetInfoUpdate = {
-    isAvailable: boolean
-}
-
-export { PetInfoInsert, PetInfoRetrieve, PetInfoUpdate };
+export { PetInfoInsert, PetInfoRetrieve };

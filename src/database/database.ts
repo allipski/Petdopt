@@ -3,7 +3,7 @@ import '../setup.js';
 
 const { Pool } = pg;
 
-const databaseConfig : ConnectionConfig = {
+const databaseConfig: ConnectionConfig = {
     connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
