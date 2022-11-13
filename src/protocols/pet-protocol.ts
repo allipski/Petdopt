@@ -9,6 +9,6 @@ type PetEntity= {
     createdAt?: string | Date
 }
 
-type Pet = Omit<PetEntity, "id">
+type Pet = Omit<PetEntity, "id" | "isAvailable" | "createdAt">
 
 export { Pet, PetEntity };
